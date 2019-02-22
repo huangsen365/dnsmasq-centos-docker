@@ -16,6 +16,7 @@ RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum makecache fast
 RUN yum -y install dnsmasq
 RUN systemctl enable dnsmasq.service
+COPY ./dnsmasq.conf /etc/dnsmasq.conf
 
 EXPOSE 53 53/udp 
 
